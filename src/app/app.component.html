@@ -7,7 +7,7 @@
 			<input type="text" />
         </p>
 			<br />
-			<table>
+			<table class="table table-striped">
 				<tbody>
 					<tr>
 						<th>Name</th>
@@ -22,13 +22,15 @@
 						<td>{{user.birthday.day}}-{{user.birthday.month}}-{{user.birthday.year}}</td>
 						<td>{{user.itemNum}}</td>
 						<td>
-							<input (click)="delete(i)" type="button" value="Delete" />
-							<input (click)="setEditUser(i)" type="button" value="Edit" />
+							<input (click)="delete(i)" type="button" value="Delete" class="btn btn-outline-danger btn-sm"/>
+							<input (click)="setEditUser(i)" type="button" value="Edit" class="btn btn-outline-secondary btn-sm"/>
               </td>
 					</tr>
 				</tbody>
 			</table>
 	</fieldset>
+	<br />
+	<br />
 	<form #f="ngForm">
 		<fieldset>
 			<legend>Add/Edit</legend>
@@ -91,9 +93,9 @@
 				</div>
 			</div>
 
-			<input [hidden]="editingIndex!==undefined" (click)="add()" type="button" value="Add" [disabled]="f.invalid" />
-			<input [hidden]="editingIndex===undefined" (click)="edit()" type="button" value="update" [disabled]="f.invalid"/>
-			<input (click)="cancel()" [hidden]="editingIndex===undefined" type="button" value="cancel"  />
+			<input [hidden]="editingIndex!==undefined" (click)="add()" type="button" value="Add" [disabled]="f.invalid" class="btn btn-primary"/>
+			<input [hidden]="editingIndex===undefined" (click)="edit()" type="button" value="update" [disabled]="f.invalid" class="btn btn-primary"/>
+			<input (click)="cancel()" [hidden]="editingIndex===undefined" type="button" value="cancel" class="btn btn-outline-secondary" />
     </fieldset>
 	</form>
 </div>
